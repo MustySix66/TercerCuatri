@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Ejemplo de Formulario</h1>
+    <fieldset>
+        <legend>Formulario de contacto</legend>
+        <form action="#" method="get">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Agrega tu nombre" required oninput="this.value = this.value.toUpperCase()" autofocus>
+            <br><br>
+            <label for="correo">Correo Electronico</label>
+            <input type="email" id="correo" name="correo" placeholder="Agrega tu correo" required oninput="this.value = this.value.toLowerCase()">
+            <br><br>
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" placeholder="Tu edad" min="1" max="110">
+            <br><br>
+            <label for="contra">Contraseña</label>
+            <input type="password" id="contra" name="contra" placeholder="Ingresa tu contraseña" required>
+            <br><br>
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <br><br>
+            <label for="pais">Pais: </label>
+            <select name="paies" id="pais">
+                <option value="">-- Seleciona tu pais -- </option>
+                <option value="">Mexico</option>
+                <option value="">Argentina</option>
+                <option value="">Uruguay</option>
+                <option value="">Honduras</option>
+                <option value="">Sopa du macacos</option>
+                <option value="">Panama</option>
+                <option value="">Colombia</option>
+                <option value="">Chile</option>
+                <option value="">Perú</option>
+                <option value="">Venezuela</option>
+            </select>
+            <br><br>
+            <input type="checkbox" id="terminos" name="terminos" required>
+            <label for="terminos">Acepto los terminos y condiciones.</label>
+            <br><br>
+            <label for="color">Color favorito</label>
+            <input type="color" id="color" name="color">
+            <br><br>
+            <input type="submit">
+            <button>Guardar</button>
+        </form>
+    </fieldset>
+</body>
+</html>

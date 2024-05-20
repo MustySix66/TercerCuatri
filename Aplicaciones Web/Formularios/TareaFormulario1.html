@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Ejemplo de Formulario</h1>
+    <fieldset>
+        <legend>Formulario de contacto</legend>
+        <form action="#" method="get">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required oninput="this.value = this.value.toUpperCase()" autofocus>
+            <br><br>
+            <label for="correo">Correo Electronico</label>
+            <input type="email" id="correo" name="correo" required oninput="this.value = this.value.toLowerCase()">
+            <br><br>
+            <label for="URL">Pagina web</label>
+            <input type="url" id="URL" name="URL" placeholder="Escribe la URL de tu pagina web personal">
+            <br><br>
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha">
+            <br><br>
+            <label for="tiempo">Tiempo</label>
+            <input type="time" id="tiempo" name="tiempo">
+            <br><br>
+            <label for="fechayhora">Fecha y hora</label>
+            <input type="datetime-local" id="fechayhora" name="fechayhora">
+            <br><br>
+            <label for="mes">Mes</label>
+            <input type="month" id="mes" name="mes">
+            <br><br>
+            <label for="semana">Semana</label>
+            <input type="week" id="semana" name="semana">
+            <br><br>
+            <label for="numero">Numero</label>
+            <input type="number" id="numero" name="numero" min="-10" max="10">
+            <br><br>
+            <label for="fono">Telefono</label>
+            <input type="tel" id="fono" name="fono">
+            <br><br>
+            <label for="busca">Termino de busqueda</label>
+            <input type="search" id="busca" name="busca">
+            <br><br>
+            <label for="color">Color favorito</label>
+            <input type="color" id="color" name="color">
+            <br><br>
+            <button>Guardar</button>
+        </form>
+    </fieldset>
+</body>
+</html>
