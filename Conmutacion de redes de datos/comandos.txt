@@ -1,0 +1,51 @@
+Router
+
+
+enable
+conf t
+line console 0
+logging synchronous
+exit
+no ip domain lookup
+int g0/0
+ip add 192.172.2.1 255.255.255.0
+no shut
+exit
+
+enable
+conf t
+int s0/0/1
+clock rate 64000
+ip add 170.10.10.6 255.255.255.252
+no shut
+exit
+
+
+
+
+
+switch
+
+
+enable
+conf t
+line console 0
+logging synchronous
+exit
+no ip domain lookup
+int vlan1
+ip add 192.172.2.2 255.255.255.0
+no shut
+exit
+ip default-gateway 192.172.2.1
+end
+copy run start
+exit
+
+
+
+
+
+
+
+
