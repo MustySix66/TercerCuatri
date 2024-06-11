@@ -11,6 +11,10 @@ int g0/0
 ip add 192.172.2.1 255.255.255.0
 no shut
 exit
+int serial 0/0/0
+ip add 170.0.0.0 255.255.255.0
+no shut
+exit
 
 enable
 conf t
@@ -41,11 +45,3 @@ ip default-gateway 192.172.2.1
 end
 copy run start
 exit
-
-
-
-
-
-
-
-
