@@ -1,5 +1,5 @@
 Router
-
+***********************************************************************************************************************************************************************
 
 enable
 conf t
@@ -8,21 +8,114 @@ logging synchronous
 exit
 no ip domain lookup
 int g0/0
-ip add 192.172.2.1 255.255.255.0
+ip add 192.2.0.1 255.255.248.0
 no shut
-exit
-int serial 0/0/0
-ip add 170.0.0.0 255.255.255.0
-no shut
-exit
+end
+copy run star
 
-enable
+
+
+
+
+
+
+
+
+
+
+ena
 conf t
 int s0/0/1
 clock rate 64000
-ip add 170.10.10.6 255.255.255.252
+ip add 10.10.10.54 255.255.255.252
+no shut
+end
+copy run star
+
+
+
+
+
+
+
+
+
+router eigrp 1
+network 10.10.10.0 0.0.0.255
+passive-interface g0/0
+no auto-summary
+
+redistribute rip metric 10000 100 255 1 1500
+network 192.168.1.0
+exit
+
+
+
+
+
+
+
+ena
+conf t
+ipv6 router rip juana
+exit
+int s0/0/0
+ipv6 add cafe:bdad::2/64
+ipv6 rip juana enable
+end
+copy run star
+
+
+
+
+
+conf t
+router rip
+version 2
+network 10.10.10.0
+network 10.10.10.4
+network 10.10.10.12
+network 192.2.28.0
+passive-interface g0/0
+no auto-summary
+end
+copy run star
+
+
+
+
+redistribute eigrp 1 metric 1
+
+
+
+
+
+
+ena
+conf t
+ipv6 unicast-routing
+ipv6 router eigrp 2
+eigrp router-id 6.6.6.6
 no shut
 exit
+int s0/0/0
+ipv6 add cafe:aead::2/64
+ipv6 eigrp 2 enable
+end
+copy run star
+
+
+
+
+
+ena
+conf t
+ipv6 router eigrp 2
+
+
+
+
+
 
 
 
@@ -45,3 +138,10 @@ ip default-gateway 192.172.2.1
 end
 copy run start
 exit
+
+
+
+
+
+
+
